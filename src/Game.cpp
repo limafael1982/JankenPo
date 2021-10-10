@@ -5,9 +5,16 @@
 #include "Game.h"
 
 
-Game::Game(unsigned short turns)
+Game::Game(int turns)
 {
     this->turns = turns;
+    this->player1 = std::unique_ptr<Player>(new Player("Player 1"));
+    this->player2 = std::unique_ptr<Player>(new Player("CPU"));
+}
+
+Game::Game()
+{
+    this->turns = 5;
     this->player1 = std::unique_ptr<Player>(new Player("Player 1"));
     this->player2 = std::unique_ptr<Player>(new Player("CPU"));
 }
@@ -39,7 +46,7 @@ void Game::displayWeaponsFromPlayers()
 {
     std::cout << this->player1->getPlayerName() << " has " << this->player1->getCurrentWeaponStr()
         << " and " << this->player2->getPlayerName() << " has " <<
-        this->player2->getCurrentWeaponStr() << "!";
+        this->player2->getCurrentWeaponStr() << "!" << std::endl;
 }
 
 void Game::decideWinnerFromCurrentRound()
@@ -85,6 +92,14 @@ void Game::decideWinnerFromCurrentRound()
     }
 }
 
+void Game::displayPointsFromPlayers()
+{
+    std::cout << "[POINTS " << this->player1->getPlayerName()
+        << "] = " << this->player1->getNumPoints() << std::endl;
+    std::cout << "[POINTS " << this->player2->getPlayerName()
+        << "] = " << this->player2->getNumPoints() << std::endl;
+}
+
 void Game::decideWinner()
 {
     std::string winner = "DRAW GAME!";
@@ -106,22 +121,17 @@ void Game::start()
     while (this->turns > 0)
     {
         std::cout << "Choose: 1, 2, 3, or \"q\":";
-        unsigned char option;
+        int option;
         std::cin >> option;
-        if (option == 'q')
-        {
-            this->turns = 0;
-
-        }
-        else
+        if ((option == 1) || (option == 2) || (option == 3))
         {
             try
             {
-                this->turns--;
-                int option_num = static_cast<int>(option);
-                this->player1->setWeapon(option_num);
+                this->player1->setWeapon(option);
                 this->player2->setWeapon(this->getRandomNumber(1, 3));
+
                 decideWinnerFromCurrentRound();
+                displayPointsFromPlayers();
 
             } catch (std::exception &e)
             {
@@ -131,6 +141,14 @@ void Game::start()
             }
             this->turns--;
         }
+        else
+        {
+            this->turns = 0;
+            break;
+        }
     }
+    displayPointsFromPlayers();
     decideWinner();
 }
+
+

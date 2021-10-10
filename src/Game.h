@@ -11,7 +11,7 @@
 class Game
 {
 private:
-    unsigned short int turns;
+    int turns;
     std::unique_ptr<Player> player1;
     std::unique_ptr<Player> player2;
 
@@ -21,10 +21,11 @@ protected:
     void decideWinnerFromCurrentRound();
     void displayWeaponsFromPlayers();
     void decideWinner();
+    void displayPointsFromPlayers();
 
 public:
-    Game(unsigned short int turns);
-    Game() = delete;
+    Game(int turns);
+    Game();
     virtual ~Game();
 
     void start();
