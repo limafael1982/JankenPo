@@ -35,7 +35,7 @@ void Player::setPlayerName(std::string playerName)
     this->playerName = std::move(playerName);
 }
 
-short int Player::getNumPoints()
+unsigned short int Player::getNumPoints()
 {
     return numPoints;
 }
@@ -45,5 +45,51 @@ void Player::increasePoints()
     if (numPoints < maxPoints)
     {
         numPoints++;
+    }
+}
+
+WeaponEnum Player::getWeapon()
+{
+    return this->weapon;
+}
+
+std::string Player::getCurrentWeaponStr()
+{
+    std::string ans;
+    switch (this->weapon)
+    {
+        case SCISSORS:
+        {
+            ans = "SCISSORS";
+            break;
+        }
+        case PAPER:
+        {
+            ans = "PAPER";
+            break;
+        }
+        case ROCK:
+        {
+            ans = "ROCK";
+            break;
+        }
+    }
+
+    return ans;
+}
+
+void Player::setWeapon(int choice)
+{
+    switch (choice)
+    {
+        case 1: {this->weapon = SCISSORS; break;}
+        case 2: {this->weapon = PAPER; break;}
+        case 3: {this->weapon = ROCK; break;}
+        default :
+        {
+            std::string error_msg = "Please choose number 1, 2 or 3.";
+            std::cout << error_msg << std::endl;
+            throw std::invalid_argument(error_msg);
+        }
     }
 }

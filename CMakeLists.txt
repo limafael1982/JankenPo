@@ -11,6 +11,8 @@ set(SRC
         ${CMAKE_SOURCE_DIR}/src/WeaponEnum.h
         ${CMAKE_SOURCE_DIR}/src/Player.h
         ${CMAKE_SOURCE_DIR}/src/Player.cpp
+        ${CMAKE_SOURCE_DIR}/src/Game.h
+        ${CMAKE_SOURCE_DIR}/src/Game.cpp
         ${CMAKE_SOURCE_DIR}/src/main.cpp
 )
 
