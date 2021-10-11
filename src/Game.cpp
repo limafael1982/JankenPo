@@ -5,18 +5,14 @@
 #include "Game.h"
 
 
-Game::Game(int turns)
+Game::Game(int turns) : turns(turns), player1(std::unique_ptr<Player>(new Player("Player 1"))),
+player2( std::unique_ptr<Player>(new Player("CPU")))
 {
-    this->turns = turns;
-    this->player1 = std::unique_ptr<Player>(new Player("Player 1"));
-    this->player2 = std::unique_ptr<Player>(new Player("CPU"));
 }
 
-Game::Game()
+Game::Game() : turns(5), player1(std::unique_ptr<Player>(new Player("Player 1"))),
+               player2( std::unique_ptr<Player>(new Player("CPU")))
 {
-    this->turns = 5;
-    this->player1 = std::unique_ptr<Player>(new Player("Player 1"));
-    this->player2 = std::unique_ptr<Player>(new Player("CPU"));
 }
 
 Game::~Game()
