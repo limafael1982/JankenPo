@@ -16,7 +16,6 @@ private:
     std::unique_ptr<Player> player2;
 
 protected:
-    int getRandomNumber(int lower_bound, int upper_bound);
     void printInstructions();
     void decideWinnerFromCurrentRound();
     void displayWeaponsFromPlayers();

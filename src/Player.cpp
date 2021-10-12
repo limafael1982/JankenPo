@@ -93,3 +93,15 @@ void Player::setWeapon(int choice)
         }
     }
 }
+
+int Player::getRandomNumber(int lower_bound, int upper_bound)
+{
+    srand(time(NULL));
+    int range = upper_bound - lower_bound + 1;
+    return rand() % range + lower_bound;
+}
+
+void Player::setRandomWeapon()
+{
+    this->setWeapon(getRandomNumber(1, 3));
+}

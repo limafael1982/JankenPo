@@ -31,12 +31,7 @@ void Game::printInstructions()
 
 }
 
-int Game::getRandomNumber(int lower_bound, int upper_bound)
-{
-    srand(time(NULL));
-    int range = upper_bound - lower_bound + 1;
-    return rand() % range + lower_bound;
-}
+
 
 void Game::displayWeaponsFromPlayers()
 {
@@ -124,7 +119,7 @@ void Game::start()
             try
             {
                 this->player1->setWeapon(option);
-                this->player2->setWeapon(this->getRandomNumber(1, 3));
+                this->player2->setRandomWeapon();
 
                 decideWinnerFromCurrentRound();
                 displayPointsFromPlayers();

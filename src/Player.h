@@ -20,6 +20,9 @@ private:
     unsigned short int numPoints;
     unsigned short int maxPoints = 100;
 
+protected:
+    int getRandomNumber(int lower_bound, int upper_bound);
+
 public:
 
     Player(std::string playerName);
@@ -30,6 +33,7 @@ public:
     void setPlayerName(std::string playerName);
     void setWeapon(int choice);
     WeaponEnum getWeapon();
+    void setRandomWeapon();
     std::string getCurrentWeaponStr();
     unsigned short int getNumPoints();
     void increasePoints();
