@@ -4,12 +4,6 @@
 
 #include "Game.h"
 
-
-Game::Game(int turns) : turns(turns), player1(std::unique_ptr<Player>(new Player("Player 1"))),
-player2( std::unique_ptr<Player>(new Player("CPU")))
-{
-}
-
 Game::Game() : turns(5), player1(std::unique_ptr<Player>(new Player("Player 1"))),
                player2( std::unique_ptr<Player>(new Player("CPU")))
 {
@@ -140,6 +134,11 @@ void Game::start()
     }
     displayPointsFromPlayers();
     decideWinner();
+}
+
+void Game::setTurns(int turns)
+{
+    this->turns = turns;
 }
 
 

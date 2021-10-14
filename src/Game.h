@@ -11,9 +11,12 @@
 class Game
 {
 private:
+    static Game* game_instance;
     int turns;
     std::unique_ptr<Player> player1;
     std::unique_ptr<Player> player2;
+
+    Game();
 
 protected:
     void printInstructions();
@@ -23,10 +26,18 @@ protected:
     void displayPointsFromPlayers();
 
 public:
-    Game(int turns);
-    Game();
+
     virtual ~Game();
 
+    Game(const Game& game) = delete;
+    Game& operator=(const Game& game) = delete;
+
+    static std::shared_ptr<Game> instance()
+    {
+        static std::shared_ptr<Game> game{new Game};
+        return game;
+    };
+    void setTurns(int turns);
     void start();
 
 };
