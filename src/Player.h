@@ -29,6 +29,7 @@ public:
     Player();
     virtual ~Player();
     Player(const Player &other) = delete;
+    Player& operator=(const Player&) = default;
     std::string getPlayerName();
     void setPlayerName(std::string playerName);
     void setWeapon(int choice);
