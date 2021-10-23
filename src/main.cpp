@@ -7,8 +7,7 @@
 
 int main()
 {
-    auto game = Game::instance();
-    game->start();
+    Game::instance()->start();
     return EXIT_SUCCESS;
 }
 
