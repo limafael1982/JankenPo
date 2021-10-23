@@ -2,10 +2,12 @@
 // Created by Rafael Lima on 10/10/21.
 //
 
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAME_H_
+#define GAME_H_
+
 #include <memory>
 #include <iostream>
+
 #include "Player.h"
 
 class Game
@@ -37,10 +39,12 @@ public:
         static std::shared_ptr<Game> game{new Game};
         return game;
     };
+
+
     void setTurns(int turns);
     void start();
 
 };
 
 
-#endif // GAME_H
+#endif // GAME_H_

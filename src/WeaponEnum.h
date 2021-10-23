@@ -2,8 +2,8 @@
 // Created by Rafael Lima on 10/10/21.
 //
 
-#ifndef WEAPONENUM_H
-#define WEAPONENUM_H
+#ifndef WEAPON_ENUM_H_
+#define WEAPON_ENUM_H_
 
 enum WeaponEnum
 {
@@ -12,4 +12,4 @@ enum WeaponEnum
     ROCK
 };
 
-#endif // WEAPONENUM_H
+#endif // WEAPON_ENUM_H_

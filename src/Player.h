@@ -2,12 +2,13 @@
 // Created by Rafael Lima on 10/10/21.
 //
 
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef PLAYER_H_
+#define PLAYER_H_
 
 #include <string>
 #include <utility>
 #include <iostream>
+
 #include "WeaponEnum.h"
 
 
@@ -40,4 +41,4 @@ public:
     void increasePoints();
 };
 
-#endif // PLAYER_H
+#endif // PLAYER_H_

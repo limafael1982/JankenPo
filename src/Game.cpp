@@ -22,10 +22,7 @@ void Game::printInstructions()
     std::cout << "3 for ROCK" << std::endl <<std::endl;
 
     std::cout << R"(Type "q" to quit.)" << std::endl;
-
 }
-
-
 
 void Game::displayWeaponsFromPlayers()
 {
@@ -44,36 +41,26 @@ void Game::decideWinnerFromCurrentRound()
     if ((p1Weapon == PAPER) && (p2Weapon == ROCK))
     {
         this->player1->increasePoints();
-        std::cout << this->player1->getPlayerName() << " WINS the round!" << std::endl;
     }
     else if ((p1Weapon == ROCK) && (p2Weapon == PAPER))
     {
         this->player2->increasePoints();
-        std::cout << this->player2->getPlayerName() << " WINS the round!" << std::endl;
     }
     else if ((p1Weapon == ROCK) && (p2Weapon == SCISSORS))
     {
         this->player1->increasePoints();
-        std::cout << this->player1->getPlayerName() << " WINS the round!" << std::endl;
     }
     else if ((p1Weapon == SCISSORS) && (p2Weapon == ROCK))
     {
         this->player2->increasePoints();
-        std::cout << this->player2->getPlayerName() << " WINS the round!" << std::endl;
     }
     else if ((p1Weapon == SCISSORS) && (p2Weapon == PAPER))
     {
         this->player1->increasePoints();
-        std::cout << this->player1->getPlayerName() << " WINS the round!" << std::endl;
     }
     else if ((p1Weapon == PAPER) && (p2Weapon == SCISSORS))
     {
         this->player2->increasePoints();
-        std::cout << this->player2->getPlayerName() << " WINS the round!" << std::endl;
-    }
-    else
-    {
-        std::cout << "DRAW game round!" << std::endl;
     }
 }
 
