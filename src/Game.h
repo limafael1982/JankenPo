@@ -42,7 +42,7 @@ public:
 
 
     void setTurns(int turns);
-    void start();
+    int start();
 
 };
 

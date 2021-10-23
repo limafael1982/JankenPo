@@ -7,6 +7,5 @@
 
 int main()
 {
-    Game::instance()->start();
-    return EXIT_SUCCESS;
+    return Game::instance()->start();
 }

@@ -87,8 +87,9 @@ void Game::decideWinner()
     std::cout << "Winner is: " << winner << std::endl;
 }
 
-void Game::start()
+int Game::start()
 {
+    int result = EXIT_SUCCESS;
     printInstructions();
     while (this->turns > 0)
     {
@@ -116,11 +117,15 @@ void Game::start()
         else
         {
             this->turns = 0;
+            result = EXIT_FAILURE;
             break;
         }
     }
+
     displayPointsFromPlayers();
     decideWinner();
+
+    return result;
 }
 
 void Game::setTurns(int turns)
