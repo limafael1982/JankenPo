@@ -46,5 +46,4 @@ public:
 
 };
 
-
 #endif // GAME_H_

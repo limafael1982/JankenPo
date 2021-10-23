@@ -10,4 +10,3 @@ int main()
     Game::instance()->start();
     return EXIT_SUCCESS;
 }
-

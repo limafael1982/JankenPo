@@ -127,5 +127,3 @@ void Game::setTurns(int turns)
 {
     this->turns = turns;
 }
-
-
